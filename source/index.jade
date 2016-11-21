@@ -1,0 +1,161 @@
+doctype html
+html.no-js#root
+    head
+        title
+            | Roman Zaycev - Curriculum vitae
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,700")
+        link(rel="stylesheet", href="style.css")
+        script.
+            var jsCheckTimer = setInterval(function () {
+                try{
+                    var root = document.getElementById('root');
+
+                    root.classList.remove('no-js');
+                    root.classList.add('js');
+
+                    clearInterval(jsCheckTimer);
+                }catch (e){};
+            }, 50);
+    body
+        .wrapper
+            .info
+                .info-layout
+                    .info-layout__l
+                        .info__photo
+                            img(src = "http://s1.romanzaycev.ru/cv/photo.jpg", alt = "Photo")
+                    .info-layout__r
+                        .info__full-name
+                            h1
+                                | Roman Zaycev
+                        .info__title
+                            h2
+                                | Full stack web developer
+                        .info__contact
+                            | Novosibirsk, Russia | <a href="mailto:box@romanzaycev.ru">box@romanzaycev.ru</a>
+            .cv
+                .cv-block
+                    .cv-block__title
+                        | Summary
+                    .cv-block__text
+                        ul
+                            li
+                                | Programming and Development
+                            li
+                                | Web engineer
+                            li
+                                | Over 5 years of software development experience
+                .cv-block
+                    .cv-block__title
+                        | Professional experience
+                    .cv-block__text
+                        .exp
+                            .exp-layout
+                                .exp-layout__l
+                                    .exp__title
+                                        | Freelancer
+                                        span
+                                            | Self-employed
+                                .exp-layout__r
+                                    .exp__time
+                                        | May 2016 - Present
+                            .exp__text
+                                ul
+                                    li
+                                        | Distant work;
+                                    li
+                                        | Internet projects support;
+                                    li
+                                        | software development.
+                        .exp
+                            .exp-layout
+                                .exp-layout__l
+                                    .exp__title
+                                        | Programmer
+                                        span
+                                            | "Ycaweb" Internet solutions Agency
+                                .exp-layout__r
+                                    .exp__time
+                                        | Apr 2011 — Apr 2016
+                            .exp__text
+                                ul
+                                    li
+                                        | Development and maintenance of customers websites; Frontend-development (HTML / CSS / JavaScript);
+                                    li
+                                        | PHP Development (1C-Bitrix, MVC-frameworks);
+                                    li
+                                        | Technical specifications design, Software development effort estimation, API design;
+                                    li
+                                        | Employee Training.
+                .cv-block
+                    .cv-block__title
+                        | Technology skills
+                    .cv-block__text
+                        .skills
+                            span.skills__elem
+                                | PHP5
+                            span.skills__elem
+                                | HTML5
+                            span.skills__elem
+                                | CSS3
+                            span.skills__elem
+                                | LESS
+                            span.skills__elem
+                                | Jade template engine
+                            span.skills__elem
+                                | JavaScript
+                            span.skills__elem
+                                | jQuery
+                            span.skills__elem
+                                | PHPUnit
+                            span.skills__elem
+                                | Git
+                            span.skills__elem
+                                | MongoDB
+                            span.skills__elem
+                                | Node.js
+                            span.skills__elem
+                                | MySQL
+                            span.skills__elem
+                                | OOP
+                            span.skills__elem
+                                | MVC
+                            span.skills__elem
+                                | CodeIgniter
+                            span.skills__elem
+                                | 1C-Bitrix
+                .cv-block
+                    .cv-block__title
+                        | Personal information
+                    .cv-block__text
+                        p
+                            | Date of birth: 25 feb 1990
+                        p
+                            | Citizenship: Russian Federation
+            .gallery
+                mixin galleryItem(description, photoNumber)
+                    .gallery-item.js-gallery-item&attributes(attributes)
+                        .gallery-item__pic-container
+                            .gallery-item__photo
+                                .gallery-item__title
+                                    | Edited photo
+                                img.gallery-item__edited(src="http://s1.romanzaycev.ru/cv/gallery/"+ photoNumber +".jpg")
+                            .gallery-item__photo
+                                .gallery-item__title
+                                    | Original photo
+                                img.gallery-item__original(src="http://s1.romanzaycev.ru/cv/gallery/"+ photoNumber +"-orig.jpg")
+                            .btn.gallery-item__toggle.js-gallery-item__toggle
+                                | Show original
+                        .gallery-item__description
+                            | #{description}
+                .gallery__title
+                    | ...Also, photo editing skills
+                .gallery__items
+                    +galleryItem('Mud retouch; White balance; Contrast; Tone.', '01')
+                    +galleryItem('White balance; Contrast.', '02')
+                    +galleryItem('Background remove; Tone; Contrast; Retouch; Shadow construction.', '03')
+            .source-link
+                | Source code: <a href="https://github.com/romanzaycev/cv" target="_blank">Github</a>
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+        script(src="common-min.js")

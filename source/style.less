@@ -1,0 +1,292 @@
+/*
+
+TABLE OF CONTENTS
+
+1. Imports
+2. Variables
+3. Mixins
+4. Base settings
+5. Layout settings
+6. Blocks
+. 6.1 Info
+. 6.2 Cv
+. 6.3 Exp
+. 6.4 Skills
+. 6.5 Gallery
+7. Misc
+*/
+
+/* 1. IMPORTS */
+@import (less) url("../bower_components/normalize-css/normalize.css");
+
+/* 2. VARIABLES */
+@base: #2c3e50;
+@bg: #ecf0f1;
+@link: #3498db;
+
+/* 3. MIXINS */
+.clearfix{
+  zoom: 1;
+
+  &:before,
+  &:after{
+    content:"";
+    display:table;
+  }
+
+  &:after{
+    clear: both;
+  }
+}
+
+/* 4. BASE SETTINGS */
+body{
+  background: @bg;
+  color: @base;
+  font-size: 14px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+a{
+  color: @link;
+}
+
+/* 5. LAYOUT SETTINGS */
+.wrapper{
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 6. BLOCKS */
+
+/* 6.1 Info */
+.info{
+  margin-bottom: 30px;
+
+  &-layout{
+    .clearfix();
+
+    &__l{
+      float: left;
+      margin-right: 15px;
+      width: 120px;
+    }
+
+    &__r{
+      float: left;
+      padding-top: 16px;
+    }
+  }
+
+  &__photo{
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  }
+
+  &__full-name{
+    h1{
+      margin: 0;
+    }
+  }
+
+  &__title{
+    color: lighten(@base, 15);
+    h2{
+      margin-top: 0;
+      font-size: 17px;
+      font-weight: normal;
+    }
+  }
+
+  &__contact{
+    color: lighten(@base, 30);
+    font-size: 13px;
+  }
+}
+
+/* 6.2 Cv */
+.cv-block{
+  margin: 20px 0;
+
+  &__title{
+    font-weight: bold;
+    font-size: 15px;
+    margin: 15px 0;
+  }
+
+  &__text{
+    margin: 15px 0;
+  }
+}
+
+/* 6.3 Exp */
+.exp{
+  max-width: 720px;
+  margin: 20px;
+  padding: 15px 15px 0 15px;
+  border-top: 1px dotted lighten(@base, 50);
+
+  @media screen and (max-width: 400px) {
+    padding: 15px 0 0;
+    margin: 20px 0;
+  }
+
+  &:first-child{
+    border-top: none;
+    margin-top: 0;
+  }
+
+  &-layout{
+    .clearfix();
+    &__l{
+      float: left;
+
+      @media screen and (max-width: 800px) {
+        float: none;
+      }
+    }
+
+    &__r{
+      margin-left: 560px;
+
+      @media screen and (max-width: 800px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__title{
+    font-size: 15px;
+
+    span{
+      display: inline-block;
+      padding: 1px 3px 1px 3px;
+      margin: 0 3px;
+      font-size: 12px;
+      color: @bg;
+      background: lighten(desaturate(@base, 100), 50);
+      border-radius: 4px;
+    }
+  }
+
+  &__time{
+    color: lighten(@base, 30);
+  }
+
+  &__text{
+    font-size: 13px;
+    color: lighten(@base, 10);
+  }
+}
+
+/* 6.4 Skills */
+.skills{
+  span{
+    display: inline-block;
+    padding: 2px 4px 2px 4px;
+    margin: 4px;
+    color: @bg;
+    background: lighten(@base, 10);
+    border-radius: 4px;
+  }
+}
+
+/* 6.5 Gallery */
+.gallery{
+  margin: 40px 0;
+
+  &__title{
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__items{
+
+  }
+}
+.gallery-item{
+  margin: 20px 0;
+
+  @media screen and (max-width: 660px) {
+    margin: 20px -20px;
+  }
+
+  &__title{
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    .js &{
+      display: none;
+    }
+  }
+
+  &__pic-container{
+    position: relative;
+  }
+
+  &__toggle{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+
+    .no-js &{
+      display: none;
+    }
+  }
+
+  &__description{
+    margin-top: 3px;
+    color: lighten(desaturate(@base, 100), 25);
+    font-size: 12px;
+    @media screen and (max-width: 660px) {
+      padding: 0 20px;
+    }
+  }
+
+  &__edited{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+
+    .js &{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__original{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* 7. MISC */
+.btn{
+  display: inline-block;
+  border: none;
+  padding: 2px 6px 3px 6px;
+  margin: 0;
+  border-radius: 4px;
+  color: @bg;
+  text-shadow: 0 -1px darken(@link, 10);
+  background: @link;
+  cursor: pointer;
+  box-shadow: 0 1px 1px darken(@link, 20);
+  font-size: 13px;
+}
+
+.source-link{
+  margin: 30px 0;
+  font-size: 13px;
+}

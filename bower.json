@@ -1,0 +1,27 @@
+{
+  "name": "cv",
+  "authors": [
+    "Roman Zaycev"
+  ],
+  "description": "",
+  "main": [
+    "index.html",
+    "common.js"
+  ],
+  "moduleType": [
+  ],
+  "keywords": [
+    "none"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "normalize-css": "^5.0.0"
+  }
+}
